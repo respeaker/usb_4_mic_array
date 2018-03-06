@@ -53,3 +53,33 @@ To get the full list parameters, run:
 python tuning.py -p
 ```
 
+## Realtime sound source localization and tracking
+[ODAS](https://github.com/introlab/odas) is a very cool project to perform sound source localization, tracking, separation and post-filtering. Let's have a try!
+
+1. get ODAS and build it
+
+```
+sudo apt-get install libfftw3-dev libconfig-dev libasound2-dev
+git clone https://github.com/introlab/odas.git --branch=dev
+mkdir odas/build
+cd odas/build
+cmake ..
+make
+```
+
+2. get ODAS Studio from https://github.com/introlab/odas_web/releases and open it.
+
+The `odascore` will be at `odas/bin/odascore`, the config file is at [odas.cfg](odas.cfg). Change `odas.cfg` based on your sound card number.
+
+
+```
+    interface: {
+        type = "soundcard";
+        card = 1;
+        device = 0;
+    }
+```
+
+3. upgrade your usb 4 mic array with [i6_firmware.bin](i6_firmware.bin) which includes 4 channels raw audio data.
+
+![](https://github.com/introlab/odas_web/raw/master/screenshots/live_data.png)
