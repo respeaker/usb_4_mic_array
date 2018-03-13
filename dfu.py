@@ -78,8 +78,8 @@ class DFU(object):
 
         self.device, self.interface, self.num_interfaces = devices[0]
 
-        if self.device.is_kernel_driver_active(self.interface):
-            self.device.detach_kernel_driver(self.interface)
+        # if self.device.is_kernel_driver_active(self.interface):
+        #     self.device.detach_kernel_driver(self.interface)
 
         usb.util.claim_interface(self.device, self.interface)
 
