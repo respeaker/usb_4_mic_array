@@ -1,6 +1,6 @@
 # ReSpeaker USB 4 Mic Array
 
->Coming soon
+>Available at [Seeed](https://www.seeedstudio.com/ReSpeaker-Mic-Array-v2.0-p-3053.html)
 
 ![](http://respeaker.io/assets/images/usb_4_mic_array.png)
 
