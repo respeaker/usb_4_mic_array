@@ -28,13 +28,16 @@ The Microphone Array supports USB DFU. We have [a python script - dfu.py](https:
 
 ```
 pip install pyusb
-python dfu.py --download new_firmware.bin
+python dfu.py --download new_firmware.bin       #  with sudo if usb permission error
 ```
 
-| firmware             | channels | note                                                                                                                                                                    |
-|----------------------|----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| default_firmware.bin | 1              | processed audio for ASR                                                                                                                                                 |
-| i6_firmware.bin      | 6              |  channel 0: processed audio for ASR  channel 1: mic 1 raw data channel 2: mic 2 raw data channel 3: mic 3 raw data channel 4: mic 4 raw data channel 5: merged playback |
+| firmware | channels | note |
+|---------------------------------|----------|-----------------------------------------------------------------------------------------------|
+| 1_channel_firmware.bin | 1 | processed audio for ASR |
+| 6_channels_firmware.bin | 6 | channel 0: processed audio for ASR, channel 1-4: 4 microphones' raw data, channel 5: playback |
+| 6_channels_firmware_6.02dB.bin | 6 | same as 6_channels_firmware.bin, but 4 microphones have a 6.02dB gain  |
+| 6_channels_firmware_12.04dB.bin | 6 | same as 6_channels_firmware.bin, but 4 microphones have a 12.04dB gain  |
+
 
 ## How to control the RGB LED ring
 The USB 4 Mic Array has on-board 12 RGB LEDs and has a variety of light effects. Go to the [respeaker/pixel_ring](https://github.com/respeaker/pixel_ring) to learn how to use it. The LED control protocol is at [respeaker/pixel_ring wiki](https://github.com/respeaker/pixel_ring/wiki/ReSpeaker-USB-4-Mic-Array-LED-Control-Protocol).
