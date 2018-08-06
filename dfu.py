@@ -57,7 +57,7 @@ class DFU(object):
         find all USB devices with a DFU interface
         """
         devices = []
-        for device in usb.core.find(find_all=True):
+        for device in usb.core.find(find_all=True, idVendor=0x2886, idProduct=0x0018):
             configuration = device.get_active_configuration()
 
             for interface in configuration:
