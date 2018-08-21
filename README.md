@@ -47,7 +47,7 @@ The USB 4 Mic Array has on-board 12 RGB LEDs and has a variety of light effects.
 There are some parameters of built-in algorithms to configure. For example, we can turn off Automatic Gain Control (AGC):
 
 ```
-python tuning.py AGCONOFF 0
+python tuning.py AGCONOFF 0i6_firmware.bin
 ```
 
 To get the full list parameters, run:
@@ -83,6 +83,6 @@ The `odascore` will be at `odas/bin/odascore`, the config file is at [odas.cfg](
     }
 ```
 
-3. upgrade your usb 4 mic array with [i6_firmware.bin](i6_firmware.bin) which includes 4 channels raw audio data.
+3. upgrade your usb 4 mic array with [6_channels_firmware_6.02dB.bin](6_channels_firmware_6.02dB.bin) (or 6_channels_firmware.bin, 6_channels_firmware_12.04dB.bin) which includes 4 channels raw audio data.
 
 ![](https://github.com/introlab/odas_web/raw/master/screenshots/live_data.png)
