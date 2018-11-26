@@ -37,6 +37,8 @@ python dfu.py --download new_firmware.bin       #  with sudo if usb permission e
 | 6_channels_firmware.bin | 6 | channel 0: processed audio for ASR, channel 1-4: 4 microphones' raw data, channel 5: playback |
 | 6_channels_firmware_6.02dB.bin | 6 | same as 6_channels_firmware.bin, but 4 microphones have a 6.02dB gain  |
 | 6_channels_firmware_12.04dB.bin | 6 | same as 6_channels_firmware.bin, but 4 microphones have a 12.04dB gain  |
+| 48k_1_channels_firmware.bin | 1 | 48k sample rate, 1 input channel |
+| 48k_6_channels_firmware_6.02dB.bin | 6 | s48k sample rate, 1 input channel, 6.02dB gain  |
 
 
 ## How to control the RGB LED ring
