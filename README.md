@@ -17,7 +17,7 @@ The ReSpeaker USB 4 Mic Array is the successor of the ReSpeaker USB 6+1 Mic Arra
 [Audacity](https://www.audacityteam.org/) is recommended to test audio recording.
 
 ## Install DFU and LED control driver for Windows
-On Linux and macOS, the USB 4 Mic Array will just work. On Windows, audio recording and playback will also work without installing a driver. But in order to upgrade the device's firmware or to control LEDs an DSP parameters on Windows, the libusb-win32 driver is required. We use [a handy tool - Zadig]() to install the libusb-win32 driver for both `SEEED DFU` and `SEEED Control` (the USB 4 Mic Array has 4 devices on Windows Device Manager).
+On Linux and macOS, the USB 4 Mic Array will just work. On Windows, audio recording and playback will also work without installing a driver. But in order to upgrade the device's firmware or to control LEDs an DSP parameters on Windows, the libusb-win32 driver is required. We use [a handy tool - Zadig](https://zadig.akeo.ie/) to install the libusb-win32 driver for both `SEEED DFU` and `SEEED Control` (the USB 4 Mic Array has 4 devices on Windows Device Manager).
 
 ![](http://respeaker.io/assets/images/usb_4mic_array_driver.png)
 
