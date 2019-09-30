@@ -163,7 +163,7 @@ def main():
             print('-------------------------------')
             for name in sorted(PARAMETERS.keys()):
                 data = PARAMETERS[name]
-                print('{:16}\t{}'.format(name, b'\t'.join([str(i) for i in data[2:7]])))
+                print('{:16}\t{}'.format(name, '\t'.join([str(i) for i in data[2:7]])))
                 for extra in data[7:]:
                     print('{}{}'.format(' '*60, extra))
         else:
