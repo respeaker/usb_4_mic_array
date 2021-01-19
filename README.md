@@ -35,11 +35,19 @@ python dfu.py --download new_firmware.bin       #  with sudo if usb permission e
 |---------------------------------|----------|-----------------------------------------------------------------------------------------------|
 | 1_channel_firmware.bin | 1 | processed audio for ASR |
 | 6_channels_firmware.bin | 6 | channel 0: processed audio for ASR, channel 1-4: 4 microphones' raw data, channel 5: playback |
-| 6_channels_firmware_6.02dB.bin | 6 | same as 6_channels_firmware.bin, but 4 microphones have a 6.02dB gain  |
-| 6_channels_firmware_12.04dB.bin | 6 | same as 6_channels_firmware.bin, but 4 microphones have a 12.04dB gain  |
-| 48k_1_channels_firmware.bin | 1 | 48k sample rate, 1 input channel |
-| 48k_6_channels_firmware_6.02dB.bin | 6 | s48k sample rate, 1 input channel, 6.02dB gain  |
 
+
+>**Note: The flash memory of XVF3000 has updated from 90nm to 65nm, the Jedec ID between the 90nm and 65nm flash memories has a 1-bit different. This will cause the new device not upgradable after you download old firmware(v2.0.0 or below) to an new device. The new firmware(v3.0.0 or above) is already compatible with old device and new device, so we advise customers to use the new firmware when DFU. The new 65nm flash memory device will use new part numbers with a suffix 'A' as the following picture:**
+
+![](./newdevice.png)
+
+### Summary of programming and dfu scenarios:
+
+|  | hardware | factory programmed | DFU firmware | outcome |
+| :-----| :-----| :-----| :-----| :-----| 
+| 1 | old device | any | any | DFU succeed, device operates correctly and upgradeable  | 
+| 2 | new device (XVF3000 with a suffix 'A') | 3.0.0 | 3.0.0 or above | DFU succeed, device operates correctly and upgradeable | 
+| 3 | new device (XVF3000 with a suffix 'A') | 3.0.0 | 2.0.0 or below | DFU succeed, device operates correctly, but **not upgradeable**  | 
 
 ## How to control the RGB LED ring
 The USB 4 Mic Array has on-board 12 RGB LEDs and has a variety of light effects. Go to the [respeaker/pixel_ring](https://github.com/respeaker/pixel_ring) to learn how to use it. The LED control protocol is at [respeaker/pixel_ring wiki](https://github.com/respeaker/pixel_ring/wiki/ReSpeaker-USB-4-Mic-Array-LED-Control-Protocol).
