@@ -57,7 +57,7 @@ The USB 4 Mic Array has on-board 12 RGB LEDs and has a variety of light effects.
 There are some parameters of built-in algorithms to configure. For example, we can turn off Automatic Gain Control (AGC):
 
 ```
-python tuning.py AGCONOFF 0i6_firmware.bin
+python tuning.py AGCONOFF 0
 ```
 
 To get the full list parameters, run:
