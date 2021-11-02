@@ -114,7 +114,7 @@ class Route(Element):
             rms_data_db = []
             for ch in range(self.channels):
                 mono = data[ch::self.channels]
-                self.kws_list[ch].put(mono.tostring())
+                self.kws_list[ch].put(mono.tobytes())
 
 
 def main():
