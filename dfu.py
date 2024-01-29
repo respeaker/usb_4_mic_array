@@ -154,7 +154,7 @@ class DFU(object):
         data = self._in_request(self.DFU_GETSTATUS, 6)
 
         status = data[0]
-        timeout = data[1] + data[2] << 8 + data[3] << 16
+        timeout = data[1] + (data[2] << 8) + (data[3] << 16)
         state = data[4]
         status_description = data[5]         # index of status description in string table
 
@@ -227,5 +227,3 @@ def main(download, revertfactory):
 
 if __name__ == '__main__':
     main()
-
-

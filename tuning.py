@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
 import sys
 import struct
 import usb.core
@@ -11,8 +13,6 @@ USAGE = """Usage: python {} -h
         NAME    get the parameter with the NAME
         NAME VALUE  set the parameter with the NAME and the VALUE
 """
-
-
 
 # parameter list
 # name: (id, offset, type, max, min , r/w, info)
@@ -106,7 +106,7 @@ class Tuning:
             usb.util.CTRL_IN | usb.util.CTRL_TYPE_VENDOR | usb.util.CTRL_RECIPIENT_DEVICE,
             0, cmd, id, length, self.TIMEOUT)
 
-        response = struct.unpack(b'ii', response.tostring())
+        response = struct.unpack(b'ii', response.tobytes())
 
         if data[2] == 'int':
             result = response[0]
@@ -155,7 +155,6 @@ def find(vid=0x2886, pid=0x0018):
     return Tuning(dev)
 
 
-
 def main():
     if len(sys.argv) > 1:
         if sys.argv[1] == '-p':
@@ -165,7 +164,7 @@ def main():
                 data = PARAMETERS[name]
                 print('{:16}\t{}'.format(name, '\t'.join([str(i) for i in data[2:7]])))
                 for extra in data[7:]:
-                    print('{}{}'.format(' '*60, extra))
+                    print('{}{}'.format(' ' * 60, extra))
         else:
             dev = find()
             if not dev:
@@ -184,7 +183,7 @@ def main():
                 if name in PARAMETERS:
                     if len(sys.argv) > 2:
                         dev.write(name, sys.argv[2])
-                    
+
                     print('{}: {}'.format(name, dev.read(name)))
                 else:
                     print('{} is not a valid name'.format(name))
@@ -192,6 +191,7 @@ def main():
             dev.close()
     else:
         print(USAGE.format(sys.argv[0]))
+
 
 if __name__ == '__main__':
     main()
